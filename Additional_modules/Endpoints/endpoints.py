@@ -1,8 +1,8 @@
 import os
 from flask_cors import CORS
 from flask import request, Flask, jsonify
-from Database.database import Database
-from Variables import variables
+from Additional_modules.Database.database import Database
+from Additional_modules.Variables import variables
 
 
 class WellnessEndpoints:
@@ -36,6 +36,8 @@ class WellnessEndpoints:
                 response_dict[field] = item[variables.products_ru_database_fields.index((field))]
             responses_list.append(response_dict)
         return responses_list
+
+
 
 if __name__ == "__main__":
     w = WellnessEndpoints()
